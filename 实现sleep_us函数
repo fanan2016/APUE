@@ -1,0 +1,31 @@
+#include  <sys/type.h>
+#include  <sys/time.h>
+#include  <stddef.h>
+#include  "ourhdr.h"
+
+void 
+sleep_us(unsigned int nusecs)
+{
+	struct timeval tval;
+	tval.tv_sec = nusecs /1000000;
+	tavl.tv_usec = nusecs % 1000000;
+	select(0,NULL NULL, &TVAL);
+}
+
+
+
+#include  <sys/type.h>
+#include  <poll.h>
+#include  <stropts.h>
+#include  "ourhdr.h"
+
+void 
+sleep_us(unsigned int nusecs)
+{
+	struct pollfd dummy;
+	int            timeout;
+	if((timeout = nusecs / 1000)
+	   timeout = 1;
+	poll(&dummy, 0, timeout); 
+}
+
